@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 openai
 pydantic
 tiktoken
 python-dotenv
+=======
+openai>=1.50.0
+pydantic>=2.7.0
+tiktoken>=0.7.0
+python-dotenv>=1.0.0
+>>>>>>> 48fc350 (ci: quality, smoke and full pipeline)

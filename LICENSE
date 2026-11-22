@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # MIT License
 
 Copyright (c) 2026 Shashikant Chitte
+=======
+MIT License
+
+Copyright (c) 2026
+>>>>>>> 48fc350 (ci: quality, smoke and full pipeline)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

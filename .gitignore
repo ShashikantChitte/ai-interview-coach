@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -30,3 +31,12 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+=======
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+>>>>>>> 48fc350 (ci: quality, smoke and full pipeline)
