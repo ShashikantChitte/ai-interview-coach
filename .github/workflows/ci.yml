@@ -45,7 +45,7 @@ jobs:
           cache-dependency-path: requirements*.txt
       - run: pip install -r requirements-dev.txt
       - name: Syntax check
-        run: python -m compileall -q interview_coach tests cli.py demo.py
+        run: python -m compileall -q interview_coach src tests cli.py demo.py main.py
       - name: Lint (non-blocking until existing style issues are cleaned up)
         continue-on-error: true
         run: pip install ruff && ruff check .
@@ -65,12 +65,17 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt
-      - name: Package imports
-        run: python -c "import interview_coach; print('import ok')"
-      - name: CLI and demo start without an API key
+      - name: Both packages import
+        run: python -c "import interview_coach, src; print('imports ok')"
+      - name: Entry points start without an API key
         run: |
           python cli.py --help
           python demo.py --help
+          python main.py --help
+      - name: Scripted demo with the mock client (no API calls)
+        run: python main.py --demo --mock
+      - name: Docker image builds
+        run: docker build -t ai-interview-coach .
 
   # 3) Nightly / on demand: dependencies are unpinned (">="), so test against the NEWEST releases
   #    on the oldest and newest supported Python.
